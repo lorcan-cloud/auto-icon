@@ -19,6 +19,14 @@
     "release": "npm run build && npm run publish:patch",
     "docs": "ts-node scripts/generate-readme.ts"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lorcan-cloud/auto-icon.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lorcan-cloud/auto-icon/issues"
+  },
+  "homepage": "https://github.com/lorcan-cloud/auto-icon#readme",
   "dependencies": {
     "node-fetch": "^2.7.0"
   },
