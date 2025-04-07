@@ -84,7 +84,7 @@ async function processProject(projectConfig: { name: string; output: string }, c
 
     // 获取CSS文件
     console.log(chalk.blue('📥 正在下载CSS文件...'));
-    const cssContent = await getCssFile(css_file);
+    const cssContent = await getCssFile(css_file, cookie);
     console.log(chalk.green('✔ CSS文件下载成功'));
 
     // 生成文件

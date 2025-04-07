@@ -26,9 +26,13 @@ export async function getProjectDetail(cookie: string, pid: number): Promise<Pro
   return response.data;
 }
 
-export async function getCssFile(url: string): Promise<string> {
+export async function getCssFile(url: string, cookie: string): Promise<string> {
   // 如果URL以'//'开头，添加'https:'前缀
   const fullUrl = url.startsWith('//') ? `https:${url}` : url;
-  const response = await axios.get(fullUrl);
+  const response = await axios.get(fullUrl, {
+    headers: {
+      Cookie: cookie
+    }
+  });
   return response.data;
 }
