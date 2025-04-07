@@ -25,6 +25,14 @@ npm install @lorcan-store/auto-icon -D
   "cookie": "你的iconfont.cn cookie",
   "name": "你的项目名称",
   "output": "src/assets/fonts/",  // 可选，默认为 src/assets/fonts/
+  // 可选，子项目配置，用于同时下载多个项目的图标
+  "children": [
+    {
+      "name": "子项目名称",
+      "output": "子项目输出目录",
+      "cookie": "子项目cookie" // 可选，如果不填则使用主项目的cookie
+    }
+  ]
 }
 ```
 
@@ -42,6 +50,8 @@ npm install @lorcan-store/auto-icon -D
 
 ```bash
 npm run icon
+# or
+pnpm icon
 ```
 
 ## 配置说明
