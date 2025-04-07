@@ -1,6 +1,6 @@
 {
   "name": "@lorcan-store/auto-icon",
-  "version": "1.3.16",
+  "version": "1.3.17",
   "description": "自动化从iconfont平台获取图标资源的工具",
   "main": "dist/index.js",
   "bin": {
