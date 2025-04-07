@@ -55,7 +55,7 @@ async function run() {
         }, child.cookie || config.cookie);
       }
     }
-    
+
     console.log(chalk.green('✅ 所有图标资源获取完成！'));
   } catch (error) {
     console.error(chalk.red('❌ 执行失败:'), error);
@@ -63,7 +63,8 @@ async function run() {
   }
 }
 
-async function processProject(projectConfig: {name: string; output: string}, cookie: string) {
+async function processProject(projectConfig: { name: string; output: string }, cookie: string) {
+  try {
     console.log(chalk.blue(`📋 正在处理项目 ${projectConfig.name}...`));
     const projectList = await getProjectList(cookie);
     const project = projectList.data.ownProjects.find(p => p.name === projectConfig.name);
@@ -75,7 +76,7 @@ async function processProject(projectConfig: {name: string; output: string}, coo
 
     // 获取项目详情
     console.log(chalk.blue('📦 正在获取项目详情...'));
-    const projectDetail = await getProjectDetail(config.cookie, project.id);
+    const projectDetail = await getProjectDetail(cookie, project.id);
     const { prefix } = projectDetail.data.project;
     const { css_file } = projectDetail.data.font;
     const { icons } = projectDetail.data;
@@ -88,7 +89,7 @@ async function processProject(projectConfig: {name: string; output: string}, coo
 
     // 生成文件
     console.log(chalk.blue('📝 正在生成文件...'));
-    const outputDir = path.resolve(process.cwd(), config.output);
+    const outputDir = path.resolve(process.cwd(), projectConfig.output);
     writeIconFiles(outputDir, cssContent, icons.map(icon => ({
       class: `${prefix}${icon.font_class}`,
       name: icon.name
