@@ -1,6 +1,6 @@
 {
   "name": "@lorcan-store/auto-icon",
-  "version": "1.3.18",
+  "version": "1.3.19",
   "description": "自动化从iconfont平台获取图标资源的工具",
   "main": "dist/index.js",
   "bin": {
@@ -15,7 +15,7 @@
     "publish:patch": "npm run version:patch && npm publish",
     "publish:minor": "npm run version:minor && npm publish",
     "publish:major": "npm run version:major && npm publish",
-    "release": "npm run build && npm run publish:patch",
+    "release": "npm run build && npm run publish",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
