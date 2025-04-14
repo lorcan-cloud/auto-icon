@@ -25,6 +25,7 @@ export interface ProjectDetailResponse {
   data: {
     project: {
       prefix: string;
+      font_family: string;
     };
     font: {
       css_file: string;

@@ -77,7 +77,7 @@ async function processProject(projectConfig: { name: string; output: string }, c
     // 获取项目详情
     console.log(chalk.blue('📦 正在获取项目详情...'));
     const projectDetail = await getProjectDetail(cookie, project.id);
-    const { prefix } = projectDetail.data.project;
+    const { prefix, font_family } = projectDetail.data.project;
     const { css_file } = projectDetail.data.font;
     const { icons } = projectDetail.data;
     console.log(chalk.green('✔ 项目详情获取成功'));
@@ -93,7 +93,7 @@ async function processProject(projectConfig: { name: string; output: string }, c
     writeIconFiles(outputDir, cssContent, icons.map(icon => ({
       class: `${prefix}${icon.font_class}`,
       name: icon.name
-    })));
+    })), font_family);
     console.log(chalk.green('✔ 文件生成成功'));
 
     console.log(chalk.green('\n🎉 图标资源获取完成！'));
