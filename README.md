@@ -177,12 +177,18 @@ npm run icon
 
 如果执行过程中出现错误，程序会输出详细的错误信息和执行日志，帮助定位问题。
 
+### 图标未更新
+
+如果遇到下载的图标和线上不一致，请更新项目的font class 链接地址
+![异常](static/reload-class.png)
+
 ## 注意事项
 
 - cookie 包含敏感信息，请不要将其提交到代码仓库
 - 建议将 `auto-icon.json` 添加到 `.gitignore` 文件中
 - 定期更新 cookie 以确保其有效性
 - 确保项目名称与 iconfont.cn 上的完全一致，包括空格和特殊字符
+- 每次更新项目的图标时，需要刷新css地址
 
 ## License
 
