@@ -42,7 +42,8 @@ export function generateIconsArray(prefix: string, icons: Array<{ font_class: st
 
 export function generateModelTypes(icons: IconItem[]): string {
   const types = icons.map(icon => `  '${icon.class}'`).join(' |\n');
-  return `export type IconType =\n${types}\n`;
+  const interfaceProps = icons.map(icon => `  '${icon.class}': true`).join(';\n');
+  return `export type IconType =\n${types}\n\nexport interface IconTypeMap {\n${interfaceProps}\n}\n`;
 }
 
 export function writeFile(outputDir: string, filename: string, content: string): void {
